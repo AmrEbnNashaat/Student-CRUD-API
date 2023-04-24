@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "7f7819be-2b61-4c2b-b6be-8fc8514e5234",
+		"name": "STUDENT API TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26796143"
+	},
+	"item": [
+		{
+			"name": "GET Students USING Filtering, Sorting, and Pagentation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students/?sortField=Age&sortOrder=asc&page=1&limit=15&offset=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "Amr",
+							"disabled": true
+						},
+						{
+							"key": "sortField",
+							"value": "Age"
+						},
+						{
+							"key": "sortOrder",
+							"value": "asc"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "15"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE new student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FirstName\":\"Amr\",\n    \"LastName\":\"Ayman\",\n    \"Age\":25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Student ID 6",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Student ID 3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FirstName\":\"Amr\",\n    \"Age\":20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"14"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

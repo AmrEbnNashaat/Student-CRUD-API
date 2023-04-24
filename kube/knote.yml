@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: knote
+spec:
+  selector:
+    app: knote
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: knote
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: knote
+  template:
+    metadata:
+      labels:
+        app: knote
+    spec:
+      containers:
+        - name: app
+          image: amrnashaat98/my-node-app:3.0.0
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              value: sql7.freemysqlhosting.net
+            - name: DB_USER
+              value: sql7614030
+            - name: DB_PASSWORD
+              value: tcNLTl18Mt
+            - name: DB_NAME
+              value: sql7614030
+            - name: DB_PORT
+              value: "3306"
+            - name: SERVER_PORT
+              value: "8080"
+          imagePullPolicy: Always
