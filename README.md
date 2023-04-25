@@ -3,7 +3,6 @@
 The Students API is a mock API that allows users to perform CRUD operations on a MySQL table called "Students". The table consists of four columns: StudentID, FirstName, LastName, and Age. The API provides the following endpoints:
 
 - GET `/students`: Retrieves a list of all students. Supports sorting, filtering, and pagination.
-- GET `/students/:id`: Retrieves a specific student by ID.
 - POST `/students`: Adds a new student.
 - PUT `/students/:id`: Updates a specific student by ID.
 - DELETE `/students/:id`: Deletes a specific student by ID.
